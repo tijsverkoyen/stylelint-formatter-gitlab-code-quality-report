@@ -1,0 +1,37 @@
+{
+  "name": "stylelint-formatter-gitlab-code-quality-report",
+  "version": "0.0.1",
+  "description": "A custom formatter for Stylelint that generates Gitlab Code Quality compatible reports",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "lint": "standard"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20.10.0"
+  },
+  "keywords": [
+    "stylelint",
+    "stylelint-formatter",
+    "formatter",
+    "gitlab",
+    "code",
+    "quality"
+  ],
+  "author": {
+    "name": "Tijs Verkoyen",
+    "url": "https://github.com/tijsverkoyen/"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "stylelint": ">=16.0.0"
+  },
+  "volta": {
+    "node": "20.10.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "standard": "^17.1.0"
+  }
+}

@@ -6,9 +6,12 @@ describe('formatter', () => {
     expect(typeof formatter()).toBe('string')
   })
 
-  test('return the correct string', () => {
-    const result = formatter()
+  test('outputs [] if there are no results', () => {
+    const results = []
+    const returnValue = { ruleMetadata: {} }
 
-    expect(result).toBe('a string of formatted results')
+    const output = formatter(results, returnValue)
+
+    expect(output).toBe('[]')
   })
 })

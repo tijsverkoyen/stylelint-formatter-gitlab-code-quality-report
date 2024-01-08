@@ -15,5 +15,5 @@ npm install --save-dev stylelint-formatter-gitlab-code-quality-report
 ### Stylelint CLI
 
 ```bash
-stylelint file.css --custom-formatter=node_modules/stylelint-formatter-gitlab-code-quality-report
+stylelint --custom-formatter=node_modules/stylelint-formatter-gitlab-code-quality-report/index.js file.css
 ```

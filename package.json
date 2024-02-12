@@ -1,6 +1,6 @@
 {
   "name": "stylelint-formatter-gitlab-code-quality-report",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A custom formatter for Stylelint that generates Gitlab Code Quality compatible reports",
   "homepage": "https://github.com/tijsverkoyen/stylelint-formatter-gitlab-code-quality-report",
   "repository": {

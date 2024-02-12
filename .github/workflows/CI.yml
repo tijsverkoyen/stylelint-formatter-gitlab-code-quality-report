@@ -1,0 +1,42 @@
+name: CI
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+  - cron: 0 0 * * 0
+
+jobs:
+  test:
+    name: Test
+
+    strategy:
+      matrix:
+        node: [20.x]
+        os: [ubuntu-latest]
+        include:
+        - node: 19.x
+          os: ubuntu-latest
+        - node: 18.x
+          os: ubuntu-latest
+
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v4
+      with: { node-version: "${{ matrix.node }}" }
+    - name: Install Packages
+      run: npm install
+    - name: Test
+      run: npm run -s test -- --reporters="jest-junit" --reporters=default
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: success() || failure()
+      with:
+        name: Tests Results (${{ matrix.node }})
+        path: junit.xml
+        reporter: jest-junit

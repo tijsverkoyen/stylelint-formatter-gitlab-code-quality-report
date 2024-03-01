@@ -1,4 +1,4 @@
-name: CI
+name: test on different node versions
 on:
   workflow_dispatch:
   push:
@@ -7,6 +7,11 @@ on:
     branches: [main]
   schedule:
   - cron: 0 0 * * 0
+
+permissions:
+  contents: read
+  actions: read
+  checks: write
 
 jobs:
   test:
